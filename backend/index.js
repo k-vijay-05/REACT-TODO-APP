@@ -2,7 +2,8 @@ const express=require("express");
 const { createTodo, updatetodo } = require("./type");
 const { todo } = require("./database");
 const app=express();
-app.port=3000;
+const cors=require("cors");
+app.use(cors());
 app.use(express.json());
 app.post("/todo",async function(req,res){
     const userinput=req.body;
